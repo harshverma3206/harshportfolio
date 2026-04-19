@@ -16,15 +16,18 @@ const Navigation = () => {
     }
 
     return (
-        <div className='fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 sm:gap-4'>
-            {Object.values(icons).map((icon, index) => {
-                return (
-                    <button key={index} className='p-3! sm:p-4! rounded-2xl bg-[#a6a6a6]/90 backdrop-blur-xl backdrop-saturate-150 border border-gray-400/20'>
-                        {icon}
-                    </button>
-                )
-            })}
-        </div>
+        <>
+            <h1 className='fixed top-6 sm:top-10 backdrop-blur-2xl rounded-2xl p-1! px-3!'>Portfolio</h1>
+            <div className='fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 sm:gap-4 rounded-2xl backdrop-blur-2xl'>
+                {Object.values(icons).map((icon, index) => {
+                    return (
+                        <button key={index} className='p-3! sm:p-4! rounded-2xl bg-[#a6a6a6]/90 backdrop-blur-xl backdrop-saturate-150 border border-gray-400/20'>
+                            {icon}
+                        </button>
+                    )
+                })}
+            </div>
+        </>
     )
 }
 

@@ -2,9 +2,20 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className=''>
-      <h1>Portfolio</h1>
-    </div>
+    <>
+      <div className='flex items-center justify-center rounded-3xl] h-[85vh]'>
+        <div className='bg-[#a6a6a6] p-4! rounded-3xl mt-20! sm:mt-3! sm:w-[350px] w-[99%]'>
+          <img className='rounded-3xl sm:h-[320px] h-[70vw]' src="./Image01.jpg" alt="" />
+          <div className='flex flex-col gap-1 p-2! px-3!'>
+            <div className='mt-1! flex justify-between'>
+              <h2 className='' >Harsh Verma</h2>
+              <h2>24</h2>
+            </div>
+            <h5>I am Frontend Developer Creating Advanced <b>Mobile First </b>Website using React.</h5>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 

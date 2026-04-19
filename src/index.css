@@ -36,6 +36,13 @@ h4 {
   word-spacing: 2px;
 }
 
+h5 {
+  font-size: clamp(8px, 4vw, .9rem);
+  line-height: 1.2;
+  opacity: 0.6;
+  /* word-spacing: 2px; */
+}
+
 p {
   font-size: clamp(20px, 8vw, 2.5rem);
   line-height: 1.2;
