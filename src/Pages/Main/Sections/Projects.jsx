@@ -20,13 +20,13 @@ const Projects = () => {
     }
   ]
   return (
-    <div className='p-7!'>
-      <li className='text-[20px] ml-3!'><h2>my projects</h2></li>
-      <div className='flex flex-col'>
+    <div className='md:p-3!'>
+      <li className='text-[20px] ml-3!'><h2 >my projects</h2></li>
+      <div className='flex flex-col mt-2.5!'>
         {projectsData.map((project) => (
-          <div className='p-5! border-b-2 border-gray-900 cursor-pointer' key={project.name}>
+          <div className='md:p-3! border-b-2 border-gray-900 cursor-pointer' key={project.name}>
             <a className='' href={project.link} target="_blank" rel="noopener noreferrer">
-              <h3 className='uppercase tracking-tighter text-[8vw]!'>{project.name}</h3>
+              <h3 className='uppercase tracking-tighter text-[8.5vw]!'>{project.name}</h3>
             </a>
           </div>
         ))}
