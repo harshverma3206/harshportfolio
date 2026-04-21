@@ -16,8 +16,8 @@ const Mainpage = () => {
     console.log(e.clientX, e.clientY)
 
     gsap.to(customMouse.current, {
-      x: e.clientX - 125,
-      y: e.clientY - 125,
+      x: e.clientX - 117,
+      y: e.clientY - 110,
       duration: 0.5,
     })
   }
@@ -29,9 +29,11 @@ const Mainpage = () => {
       }}
       className='bg-gradient-to-r from-[#bfbfbf] to-[#ffffff] p-5! lg:px-10! sm:py-10! flex flex-col gap-25! relative'>
       <div
-        className='bg-[#c0c0c0] h-40 w-40 fixed rounded-full pointer-events-none'
+        className='bg-[#c0c0c0] h-40 w-40 fixed rounded-full pointer-events-none hidden lg:flex items-center justify-center mix-blend-difference'
         ref={customMouse}
-      ></div>
+      >
+        a
+      </div>
       <Navigation />
       <Home />
       <About />

@@ -11,7 +11,7 @@ const Home = () => {
               <h2 className='' >Harsh Verma</h2>
               <h2>24</h2>
             </div>
-            <h5>I am Frontend Developer Creating Advanced <b>Mobile First </b>Website using React.</h5>
+            <h5 className='text-gray-700'>I am Frontend Developer Creating Advanced <b>Mobile First </b>Website using React.</h5>
           </div>
         </div>
       </div>
