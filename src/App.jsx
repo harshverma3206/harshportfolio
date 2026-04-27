@@ -17,7 +17,6 @@ const App = () => {
 
   // Listen for the scroll event and log the event data
   lenis.on('scroll', (e) => {
-    console.log(e);
   });
 
   return (

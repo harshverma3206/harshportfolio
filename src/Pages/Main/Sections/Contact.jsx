@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-const Contact = () => {
+const Contact = forwardRef((props, ref) => {
 
   const socialMedia = [
     {
@@ -30,7 +30,7 @@ const Contact = () => {
   ]
 
   return (
-    <div className='p-5! max-w-282 mx-auto!'>
+    <div ref={ref} className='p-5! max-w-282 mx-auto!'>
       <li className='text-[20px] ml-3!'><h2>contact me</h2></li>
       <div className='mt-10!'>
         {socialMedia.map((media, index) => (
@@ -39,9 +39,13 @@ const Contact = () => {
               <h3>{media.name}</h3>
               <h4 className='-mt-1! lg:w-150 md:w-100'>{media.p}</h4>
             </div>
-            <div className='bg-amber-400 h-80 w-60 sm:h-100 sm:w-80 md:w-70 md:h-90 lg:h-130 lg:w-100 m-auto overflow-hidden'>
-              <a href={media.link} target='_blank' rel='noopener noreferrer'>
-                <img className='h-full w-full object-cover!' src={media.img} alt={media.name} />
+            <div className='h-80 w-60 sm:h-100 sm:w-80 md:w-70 md:h-90 lg:h-130 lg:w-100 m-auto overflow-hidden'>
+              <a
+                className=''
+                href={media.link}
+                target='_blank'
+                rel='noopener noreferrer'>
+                <img className='h-full w-full object-cover! active:scale-75 hover:scale-90 transition-transform duration-300' src={media.img} alt={media.name} />
               </a>
             </div>
           </div>
@@ -49,6 +53,6 @@ const Contact = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Contact

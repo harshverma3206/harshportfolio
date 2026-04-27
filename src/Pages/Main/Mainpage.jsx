@@ -1,5 +1,8 @@
 import React, { useRef } from 'react'
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { gsap } from 'gsap'
+
+gsap.registerPlugin(ScrollToPlugin);
 
 import Home from './Sections/Home'
 import About from './Sections/About'
@@ -12,15 +15,36 @@ const Mainpage = () => {
 
   const customMouse = useRef()
 
-  const handler = (e) => {
-    console.log(e.clientX, e.clientY)
+  const refs = {
+    home: useRef(),
+    about: useRef(),
+    skills: useRef(),
+    project: useRef(),
+    contact: useRef()
+  }
 
+  const handler = (e) => {
     gsap.to(customMouse.current, {
       x: e.clientX - 117,
       y: e.clientY - 110,
       duration: 0.5,
     })
   }
+
+  const handleNavigate = (section) => {
+    const target = refs[section];
+
+    if (!target?.current) return;
+
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: {
+        y: target.current,
+        offsetY: 80, // adjust if navbar is fixed
+      },
+      ease: "none",
+    });
+  };
 
   return (
     <div
@@ -34,12 +58,12 @@ const Mainpage = () => {
       >
         a
       </div>
-      <Navigation />
-      <Home />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Navigation onNavigate={handleNavigate} />
+      <Home ref={refs.home} />
+      <About ref={refs.about} />
+      <Projects ref={refs.project} />
+      <Skills ref={refs.skills} />
+      <Contact ref={refs.contact} />
     </div>
   )
 }
