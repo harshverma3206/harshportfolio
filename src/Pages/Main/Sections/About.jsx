@@ -1,6 +1,24 @@
-import React, { forwardRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from 'gsap'
+import React, { forwardRef, useRef } from 'react'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = forwardRef((props, ref) => {
+
+  useGSAP(() => {
+    gsap.from(ref.current, {
+      y: 1000,
+      duration: 1.5,
+      clearProps: "transform",
+      scrollTrigger: {
+        trigger: ref.current,
+        start: '-35% 100%',
+        end: 'top top'
+      }
+    })
+  })
 
   const imagesArray = [
     './Image 02.jpg',

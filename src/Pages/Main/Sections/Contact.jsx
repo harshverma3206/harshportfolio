@@ -1,4 +1,10 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const Contact = forwardRef((props, ref) => {
 
@@ -29,12 +35,36 @@ const Contact = forwardRef((props, ref) => {
     }
   ]
 
+  const socialRef = useRef([])
+  const socialContainerRef = useRef()
+
+  useGSAP(() => {
+    gsap.from(socialRef.current, {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      clearProps: "transform",
+      scrollTrigger: {
+        trigger: socialRef.current,
+        // markers: true,
+        start: "10% 85%",
+        end: "10% 45%",
+        scrub: true,
+      }
+    })
+  }, { scope: socialContainerRef })
+
   return (
     <div ref={ref} className='p-5! max-w-282 mx-auto!'>
       <li className='text-[20px] ml-3!'><h2>contact me</h2></li>
-      <div className='mt-10!'>
+      <div ref={socialContainerRef} className='mt-10!'>
         {socialMedia.map((media, index) => (
-          <div key={index} className='flex flex-col md:flex-row md:justify-between mb-10! md:mb-25! gap-4 md:gap-20'>
+          <div
+            ref={(el) => {
+              socialRef.current[index] = el
+            }}
+            key={index}
+            className='flex flex-col md:flex-row md:justify-between mb-10! md:mb-25! gap-4 md:gap-20'>
             <div className=''>
               <h3>{media.name}</h3>
               <h4 className='-mt-1! lg:w-150 md:w-100'>{media.p}</h4>

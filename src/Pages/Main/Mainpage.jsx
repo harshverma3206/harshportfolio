@@ -40,7 +40,7 @@ const Mainpage = () => {
       duration: 1,
       scrollTo: {
         y: target.current,
-        offsetY: 80, // adjust if navbar is fixed
+        offsetY: 80,
       },
       ease: "none",
     });
@@ -53,7 +53,7 @@ const Mainpage = () => {
       }}
       className='bg-gradient-to-r from-[#bfbfbf] to-[#ffffff] p-5! lg:px-10! sm:py-10! flex flex-col gap-25! relative'>
       <div
-        className='bg-[#c0c0c0] h-40 w-40 fixed rounded-full pointer-events-none hidden lg:flex items-center justify-center mix-blend-difference'
+        className='z-10 bg-[#c0c0c0] h-40 w-40 fixed rounded-full pointer-events-none hidden lg:flex items-center justify-center mix-blend-difference'
         ref={customMouse}
       >
         a

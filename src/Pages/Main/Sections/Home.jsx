@@ -1,6 +1,15 @@
+import gsap from 'gsap'
 import React, { forwardRef } from 'react'
 
 const Home = forwardRef((props, ref) => {
+
+  gsap.from(ref.current, {
+    y: 500,
+    duration: 1.2,
+    opacity: 0,
+    ease: "elastic.out(1,0.75)",
+  })
+
   return (
     <div ref={ref}>
       <div className='flex items-center justify-center rounded-3xl] h-[85vh]'>
