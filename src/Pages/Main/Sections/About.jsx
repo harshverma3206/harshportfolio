@@ -26,7 +26,7 @@ const About = forwardRef((props, ref) => {
   ]
 
   return (
-    <div ref={ref} className='p-7! max-w-275 mx-auto!  ]'>
+    <div ref={ref} className='p-7! max-w-275 mx-auto!'>
       <li className='text-[20px] ml-3!'><h2 className=''>about Myself</h2></li>
       <p className='mt-5!'>My name is Harsh Verma born in Jhansi, lived in Noida. completed my Masters in Computer Science.
         <br /> <br />

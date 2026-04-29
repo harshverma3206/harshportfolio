@@ -6,17 +6,17 @@ const Projects = forwardRef((props, ref) => {
     {
       name: 'Collaborate To-Do',
       img: './Image01.jpg',
-      link: ''
+      link: '#'
     },
     {
       name: 'E-Commerce',
       img: './Image01.jpg',
-      link: ''
+      link: '#'
     },
     {
       name: 'Weather App',
       img: './Image01.jpg',
-      link: ''
+      link: '#'
     }
   ]
   return (

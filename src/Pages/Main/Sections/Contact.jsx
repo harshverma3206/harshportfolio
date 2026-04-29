@@ -42,7 +42,8 @@ const Contact = forwardRef((props, ref) => {
     gsap.from(socialRef.current, {
       y: 100,
       opacity: 0,
-      duration: 1,
+      duration: .1,
+      stagger: .1,
       clearProps: "transform",
       scrollTrigger: {
         trigger: socialRef.current,
